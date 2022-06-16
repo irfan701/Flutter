@@ -1,3 +1,4 @@
+//setter getter
 class PrivateTwo {
   int? _age;
 
