@@ -23,101 +23,98 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Container(
-                height: 150,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Column(
-                    children: [
-                      Container(
-                          width: 300,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10, top: 10),
-                            child: Column(
-                              children: [
-                                Text("40% Off During Covid 19",
-                                    style: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
-                                    )),
-                                Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Image.asset(
-                                      'assets/fruits.png',
-                                      width: 140,
-                                    ))
-                              ],
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
-                          )),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                          width: 300,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10, top: 10),
-                            child: Column(
-                              children: [
-                                Text("40% Off During Covid 19",
-                                    style: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
-                                    )),
-                                Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Image.asset(
-                                      'assets/fruits.png',
-                                      width: 140,
-                                    ))
-                              ],
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
-                          )),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                          width: 300,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10, top: 10),
-                            child: Column(
-                              children: [
-                                Text("40% Off During Covid 19",
-                                    style: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
-                                    )),
-                                Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Image.asset(
-                                      'assets/fruits.png',
-                                      width: 140,
-                                    ))
-                              ],
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
-                          ))
-                    ],
-                  ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                        width: 300,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10, top: 10),
+                          child: Column(
+                            children: [
+                              Text("40% Off During Covid 19",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  )),
+                              Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Image.asset(
+                                    'assets/fruits.png',
+                                    width: 140,
+                                  ))
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
+                        )),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                        width: 300,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10, top: 10),
+                          child: Column(
+                            children: [
+                              Text("40% Off During Covid 19",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  )),
+                              Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Image.asset(
+                                    'assets/fruits.png',
+                                    width: 140,
+                                  ))
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
+                        )),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                        width: 300,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10, top: 10),
+                          child: Column(
+                            children: [
+                              Text("40% Off During Covid 19",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  )),
+                              Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Image.asset(
+                                    'assets/fruits.png',
+                                    width: 140,
+                                  ))
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
+                        ))
+                  ],
                 ),
               ),
             ],
