@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
       // backgroundColor: Colors.amber
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 20, top: 30),
           child: Column(
             children: [
               Text("Hello Irfan",
@@ -23,7 +23,32 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Text("JUST SEE")
+              Container(
+                  width: 300,
+                  height: 150,
+                  decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10, top: 10),
+                    child: Column(
+                      children: [
+                        Text("40% Off During Covid 19",
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            )),
+                        Align(
+                            alignment: Alignment.bottomRight,
+                            child: Image.asset(
+                              'assets/fruits.png',
+                              width: 140,
+                            ))
+                      ],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    ),
+                  ))
             ],
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
