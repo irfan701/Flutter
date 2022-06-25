@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  List<String> _categories = [
+    'Food',
+    'Electronics',
+    'Groceries',
+    'Dress',
+    'SMART WATCH',
+    "SOAP"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +124,49 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Top Categories",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Text("View All",
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.red)),
+                  ),
+                ],
+              ),
+              Container(
+                height: 40,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _categories.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(right: 7),
+                        child: Container(
+                          height: 30,
+                          // width: 80,
+                          decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50))),
+                          child: Center(
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: Text(_categories[index]),
+                          )),
+                        ),
+                      );
+                    }),
+              )
             ],
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
