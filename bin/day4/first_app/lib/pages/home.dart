@@ -166,7 +166,14 @@ class HomeScreen extends StatelessWidget {
                         ),
                       );
                     }),
-              )
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Expanded(
+                  child: Container(
+                color: Colors.blue,
+              ))
             ],
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
