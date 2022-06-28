@@ -1,5 +1,9 @@
 import 'package:first_app/bottom_nav_controller.dart';
+import 'package:first_app/details_screen.dart';
+import 'package:first_app/pages/ExtraScreen.dart';
+import 'package:first_app/pages/add.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +18,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          /*
+        textTheme: GoogleFonts.poppinsTextTheme(
+            Theme.of(context).textTheme.apply()
+        )
+*/
+          fontFamily: 'Oswald'),
+      initialRoute: '/',
+      routes: {
+        'first-screen': (context) => ExtraScreen(),
+        'second-screen': (context) => DetailsScreen()
+      },
       home: BottomNavController(),
     );
   }

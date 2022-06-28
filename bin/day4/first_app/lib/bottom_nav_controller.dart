@@ -1,3 +1,4 @@
+import 'package:first_app/pages/ExtraScreen.dart';
 import 'package:first_app/pages/account.dart';
 import 'package:first_app/pages/add.dart';
 import 'package:first_app/pages/chat.dart';
@@ -16,7 +17,8 @@ class _BottomNavControllerState extends State<BottomNavController> {
     MyAdsScreen(),
     AddScreen(),
     ChatScreen(),
-    AccountScreen()
+    AccountScreen(),
+    ExtraScreen()
   ];
 
   int _currentIndex = 0;
@@ -32,6 +34,7 @@ class _BottomNavControllerState extends State<BottomNavController> {
           BottomNavigationBarItem(icon: Icon(Icons.add), label: "Add"),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+          BottomNavigationBarItem(icon: Icon(Icons.dangerous), label: "Extra")
         ],
         selectedItemColor: Color(0xFF5364F4),
         unselectedItemColor: Color(0xFfC4C4C4),
