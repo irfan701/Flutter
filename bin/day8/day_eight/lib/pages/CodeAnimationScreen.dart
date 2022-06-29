@@ -33,9 +33,23 @@ class _CodeAnimationScreenState extends State<CodeAnimationScreen> {
                 color: _color,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
+              onEnd: () {
+                setState(() {
+                  _width = _width == 200 ? 400 : 200;
+                  _color = _color == Colors.green ? Colors.red : Colors.green;
+                });
+              },
             ),
             ElevatedButton(
-                onPressed: () => animatedContainer(), child: Text("Animate"))
+                onPressed: () => animatedContainer(), child: Text("Animate")),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'first-screen');
+                },
+                child: Text("First Screen"))
           ],
         ),
       ),

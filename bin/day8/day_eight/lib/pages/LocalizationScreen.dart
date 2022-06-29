@@ -37,7 +37,7 @@ class LocalizationScreen extends StatelessWidget {
             FloatingActionButton(
               onPressed: () {},
               child: Icon(Icons.add),
-            )
+            ),
           ],
         ),
       ),
