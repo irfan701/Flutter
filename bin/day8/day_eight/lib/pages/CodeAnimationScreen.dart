@@ -49,7 +49,25 @@ class _CodeAnimationScreenState extends State<CodeAnimationScreen> {
                 onPressed: () {
                   Navigator.pushNamed(context, 'first-screen');
                 },
-                child: Text("First Screen"))
+                child: Text("First Screen")),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'second-screen');
+                },
+                child: Text("Second Screen")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'third-screen');
+                },
+                child: Text("Third Screen")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'four-screen');
+                },
+                child: Text("Four Screen")),
           ],
         ),
       ),

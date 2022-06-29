@@ -1,5 +1,8 @@
 import 'package:day_eight/bottom_nav_controller.dart';
 import 'package:day_eight/languages/Languages.dart';
+import 'package:day_eight/pages/AnimationScreenFive.dart';
+import 'package:day_eight/pages/AnimationScreenFour.dart';
+import 'package:day_eight/pages/AnimationScreenThree.dart';
 import 'package:day_eight/pages/AnimationScreenTwo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +19,9 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           'first-screen': (context) => AnimationScreenTwo(),
-          //  'second-screen': (context) => DetailsScreen()
+          'second-screen': (context) => AnimatedScreenThree(),
+          'third-screen': (context) => AnimationScreenFour(),
+          'four-screen': (context) => AnimationScreenFive(),
         },
         translations: Languages(),
         //locale: Get.deviceLocale,
