@@ -1,3 +1,5 @@
+import 'package:day_eight/pages/AnimationScreen.dart';
+import 'package:day_eight/pages/CodeAnimationScreen.dart';
 import 'package:day_eight/pages/LocalizationScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +11,12 @@ class BottomNavController extends StatefulWidget {
 }
 
 class _BottomNavControllerState extends State<BottomNavController> {
-  final _pages = [HomeScreen(), LocalizationScreen()];
+  final _pages = [
+    HomeScreen(),
+    LocalizationScreen(),
+    AnimationScreen(),
+    CodeAnimationScreen()
+  ];
 
   int _currentIndex = 0;
 
@@ -30,9 +37,10 @@ class _BottomNavControllerState extends State<BottomNavController> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.local_activity), label: "Localization"),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.redeem_sharp), label: "Home"),
-          // BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.animation), label: "Animation"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.animation), label: "C Animation"),
         ],
       ),
       body: _pages[_currentIndex],

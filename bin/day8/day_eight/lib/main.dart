@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark,
             textTheme: TextTheme(
               headline6: TextStyle(fontSize: 10),
-              bodyText2: TextStyle(fontSize: 90, color: Colors.blueGrey),
+              bodyText2: TextStyle(
+                  fontSize: 15, color: Color.fromARGB(255, 72, 178, 231)),
             ),
             //scaffoldBackgroundColor: Color.fromARGB(255, 235, 27, 27)),
             floatingActionButtonTheme: FloatingActionButtonThemeData(
