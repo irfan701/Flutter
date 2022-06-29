@@ -30,7 +30,14 @@ class LocalizationScreen extends StatelessWidget {
                 onPressed: () {
                   Get.updateLocale(Locale('en', 'US'));
                 },
-                child: Text('English'))
+                child: Text('English')),
+            SizedBox(
+              height: 20,
+            ),
+            FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+            )
           ],
         ),
       ),

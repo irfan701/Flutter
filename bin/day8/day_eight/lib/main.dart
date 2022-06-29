@@ -19,8 +19,21 @@ class MyApp extends StatelessWidget {
         fallbackLocale: Locale('en', 'US'),
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+            primarySwatch: Colors.blue,
+            brightness: Brightness.dark,
+            textTheme: TextTheme(
+              headline6: TextStyle(fontSize: 10),
+              bodyText2: TextStyle(fontSize: 90, color: Colors.blueGrey),
+            ),
+            //scaffoldBackgroundColor: Color.fromARGB(255, 235, 27, 27)),
+            floatingActionButtonTheme: FloatingActionButtonThemeData(
+                backgroundColor: Colors.amber,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                ))),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+                style: ElevatedButton.styleFrom(primary: Colors.greenAccent))),
         home: BottomNavController());
   }
 }
