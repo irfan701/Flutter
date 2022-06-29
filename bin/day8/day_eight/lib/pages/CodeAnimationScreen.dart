@@ -7,10 +7,16 @@ class CodeAnimationScreen extends StatefulWidget {
 
 class _CodeAnimationScreenState extends State<CodeAnimationScreen> {
   double _height = 100;
-
   double _width = 200;
-
   Color _color = Colors.green;
+
+  void animatedContainer() {
+    setState(() {
+      _height = 300;
+      _width = 300;
+      _color = Colors.red;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +35,7 @@ class _CodeAnimationScreenState extends State<CodeAnimationScreen> {
               ),
             ),
             ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _height = 300;
-                  });
-                },
-                child: Text("Animate"))
+                onPressed: () => animatedContainer(), child: Text("Animate"))
           ],
         ),
       ),
