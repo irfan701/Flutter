@@ -1,6 +1,7 @@
 import 'package:day_eight/pages/AnimationScreen.dart';
 import 'package:day_eight/pages/CodeAnimationScreen.dart';
 import 'package:day_eight/pages/LocalizationScreen.dart';
+import 'package:day_eight/pages/Responsive.dart';
 import 'package:flutter/material.dart';
 
 import 'package:day_eight/pages/HomeScreen.dart';
@@ -15,7 +16,8 @@ class _BottomNavControllerState extends State<BottomNavController> {
     HomeScreen(),
     LocalizationScreen(),
     AnimationScreen(),
-    CodeAnimationScreen()
+    CodeAnimationScreen(),
+    Responsive()
   ];
 
   int _currentIndex = 0;
@@ -41,6 +43,8 @@ class _BottomNavControllerState extends State<BottomNavController> {
               icon: Icon(Icons.animation), label: "Animation"),
           BottomNavigationBarItem(
               icon: Icon(Icons.animation), label: "C Animation"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.reset_tv), label: "Responsive"),
         ],
       ),
       body: _pages[_currentIndex],
