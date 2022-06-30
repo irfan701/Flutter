@@ -49,6 +49,11 @@ class Responsive extends StatelessWidget {
                   Navigator.pushNamed(context, 'res-five');
                 },
                 child: Text("Media Query")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'res-six');
+                },
+                child: Text("Orientation Builder")),
           ],
         ),
       ),
