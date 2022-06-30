@@ -25,6 +25,14 @@ class Responsive extends StatelessWidget {
                   Navigator.pushNamed(context, 'res-two');
                 },
                 child: Text("Fitted Box")),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'res-three');
+                },
+                child: Text("Fractionally Sized Box")),
           ],
         ),
       ),

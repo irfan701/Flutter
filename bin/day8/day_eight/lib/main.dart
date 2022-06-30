@@ -6,6 +6,7 @@ import 'package:day_eight/pages/AnimationScreenThree.dart';
 import 'package:day_eight/pages/AnimationScreenTwo.dart';
 import 'package:day_eight/pages/ResAspectRatio.dart';
 import 'package:day_eight/pages/ResFittedBox.dart';
+import 'package:day_eight/pages/ResFractionallySizedBox.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           'four-screen': (context) => AnimationScreenFive(),
           'res-one': (context) => ResAspectRatio(),
           'res-two': (context) => ResFittedBox(),
+          'res-three': (context) => ResFractionallySizedBox(),
         },
         translations: Languages(),
         //locale: Get.deviceLocale,
