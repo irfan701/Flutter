@@ -54,6 +54,14 @@ class Responsive extends StatelessWidget {
                   Navigator.pushNamed(context, 'res-six');
                 },
                 child: Text("Orientation Builder")),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'res-seven');
+                },
+                child: Text("Flutter Screen Util")),
           ],
         ),
       ),
