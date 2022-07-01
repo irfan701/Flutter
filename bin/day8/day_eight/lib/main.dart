@@ -11,6 +11,7 @@ import 'package:day_eight/pages/ResFractionallySizedBox.dart';
 import 'package:day_eight/pages/ResLayoutBuilder.dart';
 import 'package:day_eight/pages/ResMediaQuery.dart';
 import 'package:day_eight/pages/ResOrientationBuilder.dart';
+import 'package:day_eight/pages/TabBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
               'res-four': (context) => ResLayoutBuilder(),
               'res-five': (context) => ResMediaQuery(),
               'res-six': (context) => ResOrientationBuilder(),
-              'res-seven': (context) => FlutterScreenUtil()
+              'res-seven': (context) => FlutterScreenUtil(),
+              'tabbar': (context) => TabBarP()
             },
             translations: Languages(),
             //locale: Get.deviceLocale,
