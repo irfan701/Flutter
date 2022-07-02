@@ -4,9 +4,19 @@ import 'package:first_app/pages/ExtraScreen.dart';
 import 'package:first_app/pages/add.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+
   runApp(const MyApp());
+
+  var box = await Hive.openBox('todo-list');
+
+  // box.put('name', 'David');
+  // print('Name: ${box.get('name')}');
 }
 
 class MyApp extends StatelessWidget {

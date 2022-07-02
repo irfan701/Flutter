@@ -9,7 +9,7 @@ class TabBarP extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(labelColor: Colors.blue, tabs: [
+            bottom: TabBar(tabs: [
               Tab(icon: Icon(Icons.camera)),
               Tab(icon: Icon(Icons.message)),
             ]),
