@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import 'package:hive_flutter/hive_flutter.dart';
+
 class AccountScreen extends StatefulWidget {
   const AccountScreen({Key? key}) : super(key: key);
 
@@ -9,19 +11,20 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-  var myJson = [
-    {"name": "irfan", "age": "20"},
-    {"name": "hossain", "age": "25"},
-    {"name": "arman", "age": "30"},
-    {"name": "Emirates", "age": "35"},
-  ];
+  // var myJson = [
+  //   {"name": "irfan", "age": "20"},
+  //   {"name": "hossain", "age": "25"},
+  //   {"name": "arman", "age": "30"},
+  //   {"name": "Emirates", "age": "35"},
+  // ];
   TextEditingController _userInputController = TextEditingController();
-  List<String> todos = [
-    "Machine Learning",
-    "JAVA SCRIPT",
-    "LARAVEL",
-    "FLUTTER"
-  ];
+  TextEditingController _updateController = TextEditingController();
+  // List<String> todos = [
+  //   "Machine Learning",
+  //   "JAVA SCRIPT",
+  //   "LARAVEL",
+  //   "FLUTTER"
+  // ];
 
   Box? todoBox; //NULL SAFETY
 
@@ -50,34 +53,83 @@ class _AccountScreenState extends State<AccountScreen> {
                     onPressed: () async {
                       final _userInput = _userInputController.text;
                       print(_userInput);
-                      await todoBox!.add(_userInput); //NULL SAFETY FOR SIGN
+                      await todoBox!.add(
+                          _userInput); //NULL SAFETY OR NULL CHECKER FOR SIGN
                       print("ADDED");
                     },
                     child: Text("Writa a New Todo"))),
             Expanded(
-                child: ListView.builder(
-                    itemCount: todos.length,
-                    itemBuilder: (_, index) {
-                      return Card(
-                          elevation: 4,
-                          child: ListTile(
-                              title: Text(todos[index]),
-                              trailing: SizedBox(
-                                width: 100,
-                                child: Row(
-                                  children: [
-                                    IconButton(
+              child: ValueListenableBuilder(
+                valueListenable: Hive.box('todo-list').listenable(),
+                builder: (_, box, widget) {
+                  return ListView.builder(
+                      itemCount: todoBox!.keys.toList().length,
+                      itemBuilder: (_, index) {
+                        return Card(
+                            elevation: 4,
+                            child: ListTile(
+                                title: Text(todoBox!.getAt(index).toString()),
+                                trailing: SizedBox(
+                                  width: 100,
+                                  child: Row(
+                                    children: [
+                                      IconButton(
+                                          onPressed: () {
+                                            showDialog(
+                                                context: context,
+                                                builder: (_) {
+                                                  return AlertDialog(
+                                                    title:
+                                                        Text('Update a Todo'),
+                                                    content: Column(
+                                                      children: [
+                                                        TextField(
+                                                          controller:
+                                                              _updateController,
+                                                          decoration:
+                                                              InputDecoration(
+                                                                  hintText:
+                                                                      "Write a Update todo"),
+                                                        ),
+                                                        SizedBox(
+                                                            width: 400,
+                                                            child:
+                                                                ElevatedButton(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      final _updateInput =
+                                                                          _updateController
+                                                                              .text;
+                                                                      print(
+                                                                          _updateInput);
+
+                                                                      await todoBox!.putAt(
+                                                                          index,
+                                                                          _updateInput);
+                                                                      //NULL SAFETY OR NULL CHECKER FOR SIGN
+                                                                      Navigator.pop(
+                                                                          context);
+                                                                    },
+                                                                    child: Text(
+                                                                        "Writa a Update Todo"))),
+                                                      ],
+                                                    ),
+                                                  );
+                                                });
+                                          },
+                                          icon: Icon(Icons.edit_outlined)),
+                                      IconButton(
                                         onPressed: () {},
-                                        icon: Icon(Icons.edit_outlined)),
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(Icons.delete_forever),
-                                      color: Colors.red,
-                                    ),
-                                  ],
-                                ),
-                              )));
-                    }))
+                                        icon: Icon(Icons.delete_forever),
+                                        color: Colors.red,
+                                      ),
+                                    ],
+                                  ),
+                                )));
+                      });
+                },
+              ),
+            )
           ]),
         ),
       ),
