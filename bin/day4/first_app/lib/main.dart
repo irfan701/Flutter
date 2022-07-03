@@ -13,7 +13,7 @@ void main() async {
 
   runApp(const MyApp());
 
-  var box = await Hive.openBox('todo-list');
+  Box box = await Hive.openBox('todo-list'); //1ST BOX OPEN AND THEN CALL
 
   // box.put('name', 'David');
   // print('Name: ${box.get('name')}');

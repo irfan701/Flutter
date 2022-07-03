@@ -23,11 +23,12 @@ class _AccountScreenState extends State<AccountScreen> {
     "FLUTTER"
   ];
 
-  Box? todoBox;
+  Box? todoBox; //NULL SAFETY
 
   @override
   void initState() {
-    todoBox = Hive.box('todo-list');
+    //BUILD FUNCTION ER AGEY CALL HOI
+    todoBox = Hive.box('todo-list'); //CALL
     super.initState();
   }
 
@@ -46,10 +47,10 @@ class _AccountScreenState extends State<AccountScreen> {
             SizedBox(
                 width: 400,
                 child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       final _userInput = _userInputController.text;
                       print(_userInput);
-                      todoBox!.add(_userInput);
+                      await todoBox!.add(_userInput); //NULL SAFETY FOR SIGN
                       print("ADDED");
                     },
                     child: Text("Writa a New Todo"))),
