@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
@@ -37,6 +38,7 @@ class _AccountScreenState extends State<AccountScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       //backgroundColor: Colors.red
       body: SafeArea(
@@ -70,7 +72,7 @@ class _AccountScreenState extends State<AccountScreen> {
                             child: ListTile(
                                 title: Text(todoBox!.getAt(index).toString()),
                                 trailing: SizedBox(
-                                  width: 100,
+                                  width: deviceWidth * 0.3,
                                   child: Row(
                                     children: [
                                       IconButton(
@@ -119,7 +121,14 @@ class _AccountScreenState extends State<AccountScreen> {
                                           },
                                           icon: Icon(Icons.edit_outlined)),
                                       IconButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                          await todoBox!.deleteAt(index);
+                                          Fluttertoast.showToast(
+                                              msg: "DELETE SUCCESS",
+                                              backgroundColor: Colors.red,
+                                              textColor: Colors.white,
+                                              fontSize: 16.0);
+                                        },
                                         icon: Icon(Icons.delete_forever),
                                         color: Colors.red,
                                       ),
