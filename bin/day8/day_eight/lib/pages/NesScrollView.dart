@@ -21,46 +21,75 @@ class NesScrollView extends StatelessWidget {
           child: DefaultTabController(
         length: _tabs.length,
         child: NestedScrollView(
-            headerSliverBuilder: (BuildContext context, isScrolled) {
-              return <Widget>[
-                SliverOverlapAbsorber(
-                  handle:
-                      NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-                  sliver: SliverAppBar(
-                    expandedHeight: 200.0,
-                    pinned: true,
-                    forceElevated: isScrolled,
-                    bottom: TabBar(
-                      tabs:
-                          _tabs.map((String name) => Tab(text: name)).toList(),
-                    ),
-                    flexibleSpace: FlexibleSpaceBar(
-                      //title: Text('SliverAppBar Expand'),
-                      background: Image.asset(
-                        'assets/images/xx.jpg',
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
-                    title: Text('NestedScrollView'),
+          headerSliverBuilder: (BuildContext context, isScrolled) {
+            return <Widget>[
+              SliverOverlapAbsorber(
+                /////////////////////////////
+                handle:
+                    NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                sliver: SliverAppBar(
+                  expandedHeight: 200.0,
+                  pinned: true,
+                  forceElevated: isScrolled,
+                  bottom: TabBar(
+                    tabs: _tabs.map((String name) => Tab(text: name)).toList(),
                   ),
-                )
-              ];
-            },
-            body: ListView.builder(
-                itemCount: _categories.length,
-                itemBuilder: (_, int index) {
-                  return Container(
-                    height: 80,
-                    //  color: Colors.primaries[index % Colors.primaries.length],
-                    color: Colors.primaries[index],
-                    alignment: Alignment.center,
-                    child: Text(
-                      _categories[index],
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+                  ///////////////////////////
+
+                  ////////////////////////////////////
+
+                  flexibleSpace: FlexibleSpaceBar(
+                    //title: Text('SliverAppBar Expand'),
+                    background: Image.asset(
+                      'assets/images/xx.jpg',
+                      fit: BoxFit.fitHeight,
                     ),
-                  );
-                })),
+                  ),
+                  ///////////////////////////////////
+                  title: Text('NestedScrollView'),
+                ),
+              )
+            ];
+          },
+          body: TabBarView(
+            children: _tabs.map((String name) {
+              return SafeArea(
+                top: false,
+                bottom: false,
+                child: Builder(
+                  builder: (BuildContext context) {
+                    return CustomScrollView(
+                      key: PageStorageKey<String>(name),
+                      slivers: <Widget>[
+                        SliverOverlapInjector(
+                          handle:
+                              NestedScrollView.sliverOverlapAbsorberHandleFor(
+                                  context),
+                        ),
+                        SliverPadding(
+                          padding: const EdgeInsets.all(8.0),
+                          sliver: SliverFixedExtentList(
+                            itemExtent: 48.0,
+                            delegate: SliverChildBuilderDelegate(
+                              (BuildContext context, int index) {
+                                return ListTile(
+                                  title: Text(_categories[index]),
+                                );
+                              },
+                              childCount: _categories.length,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              );
+            }).toList(),
+          ),
+        ),
       )),
     );
   }
 }
+//https://flutteragency.com/nestedscrollview-widget/
