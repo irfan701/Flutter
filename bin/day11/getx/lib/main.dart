@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:getx/HomeScreen.dart';
 import 'package:getx/routes/route.dart';
 
-void main() {
+void main() async {
+  //await GetStorage.init();
+
   runApp(const MyApp());
 }
 

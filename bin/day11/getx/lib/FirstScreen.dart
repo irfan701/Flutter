@@ -11,7 +11,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromARGB(255, 5, 36, 7),
         body: Column(
           children: [
             TextButton(
@@ -28,7 +28,23 @@ class FirstScreen extends StatelessWidget {
             TextButton(
                 onPressed: () => Get.to(SecondScreen()),
                 child: Text("Go To Second Screen By GetX",
-                    style: TextStyle(color: Colors.white)))
+                    style: TextStyle(color: Colors.white))),
+            SizedBox(
+              height: 20,
+            ),
+            TextButton(
+                onPressed: () {
+                  Get.snackbar("title", "SNACKBAR");
+                },
+                child: Text("CLICK TO SHOW")),
+            SizedBox(
+              height: 20,
+            ),
+            TextButton(
+                onPressed: () {
+                  Get.defaultDialog(title: "I AM IRFAN");
+                },
+                child: Text("CLICK TO SHOW")),
           ],
         ),
       ),
