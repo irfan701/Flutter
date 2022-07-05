@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:getx/SecondScreen.dart';
+import 'package:getx/models/MyDataModel.dart';
 
 class FirstScreen extends StatelessWidget {
-  const FirstScreen({Key? key}) : super(key: key);
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +38,31 @@ class FirstScreen extends StatelessWidget {
                   Get.snackbar("title", "SNACKBAR");
                 },
                 child: Text("CLICK TO SHOW")),
-            SizedBox(
-              height: 20,
-            ),
             TextButton(
                 onPressed: () {
                   Get.defaultDialog(title: "I AM IRFAN");
                 },
                 child: Text("CLICK TO SHOW")),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              controller: _nameController,
+              style: TextStyle(color: Colors.amber),
+            ),
+            TextField(
+              controller: _ageController,
+              style: TextStyle(color: Color.fromARGB(255, 143, 133, 105)),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  final name = _nameController.text;
+                  final age = _ageController.text;
+                  final box = GetStorage();
+                  box.write("data", MyDataModel(name: name, age: age));
+                  print("ADDED");
+                },
+                child: Text("SAVE"))
           ],
         ),
       ),

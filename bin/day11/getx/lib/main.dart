@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:getx/HomeScreen.dart';
 import 'package:getx/routes/route.dart';
 
 void main() async {
-  //await GetStorage.init();
+  await GetStorage.init();
 
   runApp(const MyApp());
 }
