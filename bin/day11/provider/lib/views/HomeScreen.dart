@@ -2,8 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/views/DetailsScreen.dart';
 
-class HomeScreen extends StatelessWidget {
-  int balance = 1000;
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +16,15 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Text("HOME SCREEN"),
-            Text(balance.toString()),
+            Text("Home Screen"),
+            Text(_counter.toString()),
             TextButton(
-                onPressed: () => Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                        builder: (_) => DetailsScreen(
-                              balance: balance,
-                            ))),
-                child: Text('Go to the Details Screen'))
+                onPressed: () {
+                  setState(() {
+                    _counter = _counter + 1;
+                  });
+                },
+                child: Text("Increment")),
           ],
         ),
       ),
