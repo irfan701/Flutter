@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:getx/models/MyDataModel.dart';
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  final box = GetStorage();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: SafeArea(child: Center(child: Text("Second Screen"))),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => print(box.read("data")),
+      ),
+      // body: Center(
+      //     // child: Text("${box.read("data")["age"]}"),
+      //     ),
     );
   }
 }

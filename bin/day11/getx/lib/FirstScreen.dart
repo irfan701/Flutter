@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:getx/SecondScreen.dart';
 import 'package:getx/models/MyDataModel.dart';
+import 'package:getx/routes/route.dart';
 
 class FirstScreen extends StatelessWidget {
   TextEditingController _nameController = TextEditingController();
@@ -62,7 +63,11 @@ class FirstScreen extends StatelessWidget {
                   box.write("data", MyDataModel(name: name, age: age));
                   print("ADDED");
                 },
-                child: Text("SAVE"))
+                child: Text("SAVE")),
+            FloatingActionButton(
+              onPressed: () => Get.to(SecondScreen()),
+              child: Icon(Icons.ac_unit_sharp),
+            )
           ],
         ),
       ),
