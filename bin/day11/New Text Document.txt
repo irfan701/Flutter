@@ -3,6 +3,12 @@ ONE PAGE TO ANOTHER PAGE E DATA PASS KORTEY GELEY CONSTRUCOTRE ER MADDOMEY PATAB
 
 provider use korley stf + useState use kortey hobey na...exncrement
 
+model er moddey data flow takbey
+provider er moddey logic takbey
+
+single provider
+multi provider
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/views/DetailsScreen.dart';

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:provider/views/HomeScreen.dart';
+import 'package:provider/provider.dart';
+import 'package:providers/provider/TodoProvider.dart';
+import 'package:providers/views/HomeScreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(
+        create: (_) => TodoProvider(),
+      ),
+    ], child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
