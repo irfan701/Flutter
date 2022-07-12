@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:providers/provider/TodoProvider.dart';
+import 'package:providers/views/DetailsScreen.dart';
+import 'package:providers/views/SplashScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   int _counter = 0;
@@ -14,6 +16,15 @@ class HomeScreen extends StatelessWidget {
         context); //Todo provider class  er sob kico access kortey parvo
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Todos Length: ${todos.todos.length}"),
+        actions: [
+          IconButton(
+              onPressed: () => Navigator.push(
+                  context, CupertinoPageRoute(builder: (_) => SplashScreen())),
+              icon: Icon(Icons.arrow_forward))
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
